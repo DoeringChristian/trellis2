@@ -1,0 +1,38 @@
+[workspace]
+name = "trellis2"
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[dependencies]
+python = "3.10.*"
+ninja = "*"
+libjpeg-turbo = "*"
+cuda-toolkit = "12.4.*"
+
+[pypi-dependencies]
+torch = { version = "==2.6.0", index = "https://download.pytorch.org/whl/cu124" }
+torchvision = { version = "==0.21.0", index = "https://download.pytorch.org/whl/cu124" }
+imageio = "*"
+imageio-ffmpeg = "*"
+tqdm = "*"
+easydict = "*"
+opencv-python-headless = "*"
+trimesh = "*"
+transformers = "*"
+gradio = ">=6.12.0, <7"
+tensorboard = "*"
+pandas = "*"
+lpips = "*"
+zstandard = "*"
+pillow-simd = "*"
+kornia = "*"
+timm = "*"
+utils3d = { git = "https://github.com/EasternJournalist/utils3d.git", rev = "9a4eb15e4021b67b12c460c7057d642626897ec8" }
+cumesh = { git = "https://github.com/JeffreyXiang/CuMesh.git" }
+flex-gemm = { git = "https://github.com/JeffreyXiang/FlexGEMM.git" }
+o-voxel = { path = "./o-voxel", editable = true }
+nvdiffrast = { git = "https://github.com/NVlabs/nvdiffrast.git" }
+huggingface-hub = { version = ">=0.20.0", extras = ["cli"] }
+
+[pypi-options]
+no-build-isolation = ["cumesh", "flex-gemm", "o-voxel", "nvdiffrast"]
