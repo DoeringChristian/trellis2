@@ -8,6 +8,7 @@ python = "3.10.*"
 ninja = "*"
 libjpeg-turbo = "*"
 cuda-toolkit = "12.4.*"
+psutil = "*"
 
 [pypi-dependencies]
 torch = { version = "==2.6.0", index = "https://download.pytorch.org/whl/cu124" }
@@ -33,6 +34,7 @@ flex-gemm = { git = "https://github.com/JeffreyXiang/FlexGEMM.git" }
 o-voxel = { path = "./o-voxel", editable = true }
 nvdiffrast = { git = "https://github.com/NVlabs/nvdiffrast.git" }
 huggingface-hub = { version = ">=0.20.0", extras = ["cli"] }
+flash-attn = "==2.7.3"
 
 [pypi-options]
-no-build-isolation = ["cumesh", "flex-gemm", "o-voxel", "nvdiffrast"]
+no-build-isolation = ["cumesh", "flex-gemm", "o-voxel", "nvdiffrast", "flash-attn"]
